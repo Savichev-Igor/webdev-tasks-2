@@ -5,7 +5,7 @@
     "email": "savichev95@gmail.com"
   }],
   "dependencies": {
-    "jscs": "2.2.1",
+    "jscs": "^2.2.1",
     "mongodb": "^2.1.7"
   },
   "scripts": {

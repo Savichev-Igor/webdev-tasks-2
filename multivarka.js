@@ -7,12 +7,12 @@ var mongoClient = require('mongodb').MongoClient;
  * Создаёт экземпляр мультиварки.
  * @constructor
  */
-module.exports = function multivarka () {
+module.exports = function Multivarka() {
 
     /**
      * Функция устанавливает адрес сервера базы данных.
      * @param {string} url
-     * @returns {context} this
+     * @returns this
      */
     this.server = function (url) {
         this._url = url;
@@ -23,7 +23,7 @@ module.exports = function multivarka () {
     /**
      * Функция устанавливает имя коллекции.
      * @param {string} collectionName
-     * @returns {context} this
+     * @returns this
      */
     this.collection = function (collectionName) {
         this._collectionName = collectionName;
@@ -34,7 +34,7 @@ module.exports = function multivarka () {
     /**
      * Функция устанавливает название колонки, которое будет использоваться в запросе.
      * @param {string} columnName
-     * @returns {context} this
+     * @returns this
      */
     this.where = function (columnName) {
         this._columnName = columnName;
@@ -44,7 +44,7 @@ module.exports = function multivarka () {
 
     /**
      * Функция просто меняет состояние объекта, устанавливая флажок isNot.
-     * @returns {context} this
+     * @returns this
      */
     this.not = function () {
         this._isNot = true;
@@ -55,7 +55,7 @@ module.exports = function multivarka () {
     /**
      * Функция устанавливает операцию 'равенства'/'неравенства' для запроса.
      * @param {string} queryString
-     * @returns {context} this
+     * @returns this
      */
     this.equal = function (queryString) {
         var tempObj = {};
@@ -77,7 +77,7 @@ module.exports = function multivarka () {
     /**
      * Функция устанавливает операцию 'меньше чем'/'больше чем' для запроса.
      * @param {string} queryString
-     * @returns {context} this
+     * @returns this
      */
     this.lessThan = function (queryString) {
         var tempObj = {};
@@ -99,7 +99,7 @@ module.exports = function multivarka () {
     /**
      * Функция устанавливает операцию 'больше чем'/'меньше чем' для запроса.
      * @param {string} queryString
-     * @returns {context} this
+     * @returns this
      */
     this.greatThan = function (queryString) {
         var tempObj = {};
@@ -122,7 +122,7 @@ module.exports = function multivarka () {
     /**
      * Функция которая устанавливает операцию 'содержится'/'не содержится' для запроса.
      * @param {string} queryString
-     * @returns {context} this
+     * @returns this
      */
     this.include = function (queryString) {
         var tempObj = {};
@@ -159,9 +159,8 @@ module.exports = function multivarka () {
                 .toArray(function (err, result) {
                     if (err) {
                         console.error(err);
-                        db.close()
-                    }
-                    else {
+                        db.close();
+                    } else {
                         callback(null, result);
                         db.close();
                     }
@@ -195,7 +194,7 @@ module.exports = function multivarka () {
      * Функция устанавливает обновляемое поле и значение.
      * @param {string} columnName
      * @param {string} newValue
-     * @returns {context} this
+     * @returns this
      */
     this.set = function (columnName, newValue) {
         this._updatedField = { $set: { [columnName]: newValue } };
@@ -246,5 +245,5 @@ module.exports = function multivarka () {
                 });
             }
         });
-    }
+    };
 };
