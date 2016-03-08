@@ -1,7 +1,7 @@
 const ivan = {
     name: 'Иван',
     group: 'ПИ-302',
-    grady: 2
+    grade: 2
 };
 
 const petr = {
@@ -13,13 +13,13 @@ const petr = {
 const igor = {
     name: 'Игорь',
     group: 'КБ-301',
-    grady: 5
+    grade: 5
 };
 
 const phedya = {
     name: 'Федя',
     group: 'КБ-301',
-    grady: 4
+    grade: 4
 };
 
 module.exports.ivan = ivan;
