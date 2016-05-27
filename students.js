@@ -1,3 +1,5 @@
+'use strict';
+
 const ivan = {
     name: 'Иван',
     group: 'ПИ-302',
